@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  apiUrl: 'https://codelabs-movie-api.herokuapp.com/'
 };
+
