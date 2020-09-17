@@ -21,7 +21,7 @@ export class MovieCardComponent implements OnInit, OnChanges {
   }
 
   setDefaultPic() {
-    this.movieImg = 'assets/images/batman-vs-godzilla.png'
+    this.movieImg = 'assets/images/placeholder.png'
   }
 
 }
