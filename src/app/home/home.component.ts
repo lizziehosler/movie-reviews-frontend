@@ -1,3 +1,4 @@
+import { LocalStorageService } from './../shared/services/local-storage.service';
 import { Movie } from './../shared/models/movie';
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from '../shared/services/movie.service';
@@ -10,11 +11,17 @@ import { MovieService } from '../shared/services/movie.service';
 export class HomeComponent implements OnInit {
   movies: Movie[] = []
   constructor(
-    private movieService: MovieService
+    private movieService: MovieService,
+    private storageService: LocalStorageService
   ) { }
 
   ngOnInit(): void {
     this.retrieveAllMovies()
+    this.setMyEmailInStorage()
+  }
+
+  setMyEmailInStorage() {
+    this.storageService.setItem('myEmail', 'lizzie.hosler@gmail.com')
   }
 
   retrieveAllMovies() {
