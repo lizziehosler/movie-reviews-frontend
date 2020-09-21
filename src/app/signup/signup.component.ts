@@ -1,6 +1,10 @@
+import { Router } from '@angular/router';
+import { User } from './../shared/models/user';
+import { UserService } from './../shared/services/user.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { MustMatch } from './must-match.validator'
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-signup',
@@ -13,8 +17,12 @@ export class SignupComponent implements OnInit, OnDestroy {
   submitting = false
   hasError = false
   errorMsg: string
+  currentUser: User
+  private subs = new Subscription()
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private router: Router,
+    private userService: UserService
   ) { }
 
   ngOnInit(): void {
@@ -45,7 +53,6 @@ export class SignupComponent implements OnInit, OnDestroy {
   }
 
   submitForm() {
-    debugger
     this.hasError = false
     this.submitting = true
     if (this.form.invalid) {
@@ -53,6 +60,30 @@ export class SignupComponent implements OnInit, OnDestroy {
       this.submitting = false
       return
     }
+    const form = this.form.value
+    const params = {
+      first_name: form.firstName,
+      last_name: form.lastName,
+      nickname: form.nickName,
+      email: form.email,
+      password: form.password,
+      password_confirmation: form.passwordConfirmation
+    }
+    this.subs.add(
+      this.userService.signup(params).subscribe(data => {
+        if (data && data.success && data.user) {
+          this.currentUser = data.user
+          this.submitting = false
+          this.router.navigate(['/home'])
+        }
+      }, error => {
+        if (error) {
+          console.log(error)
+          this.submitting = false
+          this.errorMsg = 'User already exists in this system! Please log in!'
+        }
+      })
+    )
 
 
   }
@@ -62,7 +93,7 @@ export class SignupComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-
+    this.subs.unsubscribe()
   }
 
 }

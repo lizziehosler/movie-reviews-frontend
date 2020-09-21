@@ -1,3 +1,5 @@
+import { LocalStorageService } from './shared/services/local-storage.service';
+import { UserService } from './shared/services/user.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'
@@ -39,7 +41,9 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     FormsModule
   ],
   providers: [
-    MovieService
+    MovieService,
+    UserService,
+    LocalStorageService
   ],
   bootstrap: [AppComponent]
 })
