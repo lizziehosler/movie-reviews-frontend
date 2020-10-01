@@ -22,6 +22,8 @@ import { MovieCardComponent } from './home/movie-card/movie-card.component';
 import { SignupComponent } from './signup/signup.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
+import { SingleMovieComponent } from './movies/single-movie/single-movie.component';
+import { InputStarRatingComponent } from './movies/input-star-rating/input-star-rating.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { LoginComponent } from './login/login.component';
     HomeComponent,
     MovieCardComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    SingleMovieComponent,
+    InputStarRatingComponent
   ],
   imports: [
     BrowserModule,
