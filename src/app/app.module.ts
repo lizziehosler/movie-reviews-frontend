@@ -24,6 +24,10 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { SingleMovieComponent } from './movies/single-movie/single-movie.component';
 import { InputStarRatingComponent } from './movies/input-star-rating/input-star-rating.component';
+import { ReviewCardComponent } from './movies/review-card/review-card.component';
+import { TimeAgoPipe } from './shared/pipes/time-ago.pipe';
+import { MovieReviewsComponent } from './movies/movie-reviews/movie-reviews.component';
+import { SingleReviewCardComponent } from './movies/single-review-card/single-review-card.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +39,11 @@ import { InputStarRatingComponent } from './movies/input-star-rating/input-star-
     SignupComponent,
     LoginComponent,
     SingleMovieComponent,
-    InputStarRatingComponent
+    InputStarRatingComponent,
+    ReviewCardComponent,
+    TimeAgoPipe,
+    MovieReviewsComponent,
+    SingleReviewCardComponent
   ],
   imports: [
     BrowserModule,

@@ -48,11 +48,11 @@
           <div class="col-12 mt-4 mb-4">
             <p class="desc-text">Average Rating</p>
             <hr />
-            <p>Placeholder for our Star Rating Component</p>
+            <app-input-star-rating [rating]="avgMovieRating" [starCount]="5" [padding]="0" [size]="24"></app-input-star-rating>
           </div>
           <div class="col-12 mt-4 mb-4">
             <p class="desc-text">Reviews</p>
-            <p>Placeholder for our movie review card!!!</p>
+            <app-review-card [reviews]="reviews" [movieId]="movie.id"></app-review-card>
           </div>
         </div>
       </div>
