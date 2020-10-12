@@ -5,7 +5,7 @@ import { Review } from './../../shared/models/review';
 import { Movie } from './../../shared/models/movie';
 import { MovieService } from './../../shared/services/movie.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -21,6 +21,7 @@ export class SingleMovieComponent implements OnInit, OnDestroy {
   currentUser: User
   private subs = new Subscription()
   constructor(
+    private router: Router,
     private route: ActivatedRoute,
     private movieService: MovieService,
     private userService: UserService
@@ -73,6 +74,7 @@ export class SingleMovieComponent implements OnInit, OnDestroy {
   }
 
   routeToWriteReview() {
+    this.router.navigate([`reviews/${this.movie.id}/new`])
 
   }
 
