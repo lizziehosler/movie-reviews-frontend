@@ -28,6 +28,7 @@ export class InputStarRatingComponent implements OnInit {
     }
   }
 
+
   getSizeStyles() {
     if (this.size && this.size !== 0) {
       return {
