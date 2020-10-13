@@ -23,7 +23,7 @@ export class InputStarRatingComponent implements OnInit {
   showIcon(index: number) {
     if (this.rating >= index + 1) {
       return 'star'
-    } else if (this.rating >= index + .5) {
+    } else {
       return 'star-half-alt'
     }
   }
