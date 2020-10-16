@@ -63,7 +63,7 @@ export class MovieReviewsComponent implements OnInit, OnDestroy {
     reviews.forEach(x => {
       totalRating += x.rating
     })
-    this.avgMovieRating = ( totalRating / totalReviews)
+    this.avgMovieRating = Math.round((totalRating / totalReviews )* 2) /2
 
   }
 

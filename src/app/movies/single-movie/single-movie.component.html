@@ -68,7 +68,7 @@
           ></fa-icon>
         </button>
       </div>
-      <div *ngIf="currentUser.id === movie.user_id" class="flex ml-auto">
+      <div *ngIf="currentUser.id === movie?.user_id" class="flex ml-auto">
         <div class="w-100 d-inline-flex">
           <div class="flex">
             <button class="btn btn-outline-primary" (click)="editMovie()">

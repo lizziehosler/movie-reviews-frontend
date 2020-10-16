@@ -12,7 +12,7 @@
             >{{ errorMsg }}
           </ngb-alert>
           <h2 class="mb-5">
-            New Review for <span>{{ movie.title }}</span>
+            New Review for <span>{{ movie?.title }}</span>
           </h2>
           <div class="form-group">
             <label class="label">Star Rating</label>
@@ -119,7 +119,7 @@
     <div class="col-12 mt-5 pt-5 d-inline-flex form-col">
       <div class="flex">
         <h2 class="mb-5">
-          New Review for <span>{{ movie.title }}</span>
+          New Review for <span>{{ movie?.title }}</span>
         </h2>
       </div>
       <div class="ml-auto flex movie-img">
