@@ -11,8 +11,8 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import {
-  faSpinner, faAngleLeft, faAngleRight, faPlus, faStar as fasStar, faStarHalfAlt, faArrowRight, faUpload, faVideo,
-  faEdit, faPen, faTrashAlt, faSearch, faUser, faKey, faEye, faEyeSlash, faSignInAlt, faSignOutAlt, faUserPlus, faCircle,
+  faSpinner, faTrash, faTools, faAngleLeft, faAngleRight, faPlus, faStar as fasStar, faStarHalfAlt, faArrowRight, faUpload, faVideo,
+  faEdit, faPen, faTrashAlt, faSearch, faUser, faKey, faEye, faEyeSlash, faSignInAlt, faSignOutAlt, faUserPlus, faCircle
 } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -32,6 +32,7 @@ import { SingleReviewCardComponent } from './movies/single-review-card/single-re
 import { AddEditReviewComponent } from './reviews/add-edit-review/add-edit-review.component';
 import { NewMovieComponent } from './movies/new-movie/new-movie.component';
 import { ImageCropperModule } from 'ngx-image-cropper';
+import { EditReviewComponent } from './movies/reviews/edit-review/edit-review.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { ImageCropperModule } from 'ngx-image-cropper';
     MovieReviewsComponent,
     SingleReviewCardComponent,
     AddEditReviewComponent,
-    NewMovieComponent
+    NewMovieComponent,
+    EditReviewComponent
   ],
   imports: [
     BrowserModule,
@@ -78,8 +80,7 @@ export class AppModule {
     private library: FaIconLibrary
   ) {
     this.library.addIcons(
-      faSpinner, faAngleLeft, faAngleRight, faPlus, farStar, fasStar, faStarHalfAlt, faArrowRight, faUpload, faVideo,
-      faEdit, faPen, faTrashAlt, faSearch, faUser, faKey, faEye, faEyeSlash, faSignInAlt, faSignOutAlt, faUserPlus, faCircle
-    )
+      faSpinner, faAngleLeft, faTrash, faTools, faAngleRight, faPlus, fasStar, farStar, faStarHalfAlt, faArrowRight, faUpload, faVideo,
+      faEdit, faPen, faTrashAlt, faSearch, faUser, faKey, faEye, faEyeSlash, faSignInAlt, faSignOutAlt, faUserPlus, faCircle)
   }
 }

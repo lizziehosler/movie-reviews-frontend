@@ -1,3 +1,5 @@
+import { Observable } from 'rxjs';
+import { Review } from './../models/review';
 import { environment } from './../../../environments/environment.prod';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -11,6 +13,10 @@ export class ReviewService {
     private http: HttpClient
   ) {
     this.reviewApi = `${environment.apiUrl}api/v1/reviews`
+  }
+
+  getReviewById(params): Observable<Review> {
+    return this.http.get<Review>(`${this.reviewApi}/show?id=${params.id}`)
   }
 
   getAllReviews() {

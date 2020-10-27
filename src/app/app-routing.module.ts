@@ -1,3 +1,4 @@
+import { EditReviewComponent } from './movies/reviews/edit-review/edit-review.component';
 import { NewMovieComponent } from './movies/new-movie/new-movie.component';
 import { AddEditReviewComponent } from './reviews/add-edit-review/add-edit-review.component';
 import { MovieReviewsComponent } from './movies/movie-reviews/movie-reviews.component';
@@ -47,6 +48,11 @@ const routes: Routes = [
   {
     path: 'reviews/:id/new',
     component: AddEditReviewComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: 'reviews/:reviewId/edit',
+    component: EditReviewComponent,
     pathMatch: 'full'
   }
 
