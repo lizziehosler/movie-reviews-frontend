@@ -9,5 +9,10 @@
   </div>
   <div class="col-12">
       <p class="review-body">{{review.body}}</p>
+      <div class="flex" *ngIf="review?.user_id == currentUser.id">
+        <button class="btn btn-primary edit-btn" (click)="routeToEditReview()">Edit Review
+          <fa-icon [icon]="['fas', 'tools']" size="sm" class="ml-2 text-white"></fa-icon>
+        </button>
+      </div>
   </div>
 </div>
